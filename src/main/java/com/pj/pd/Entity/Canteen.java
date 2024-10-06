@@ -8,7 +8,7 @@ import java.util.Set;
 public class Canteen {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "c_id")
     private Integer id;
 

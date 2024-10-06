@@ -22,11 +22,7 @@
         <!-- Canteens Section -->
         <div class="canteen-list">
             <h2>Canteens</h2>
-           <!--
-            <button class="btn btn-primary" data-toggle="modal" data-target="#createCanteenModal">
-                Create Canteen
-            </button> -->
-            <a th:href="@{/create-canteen}">Create Canteen</a>
+            <a th:href="@{/ad/create-canteen}">Create Canteen</a>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -42,9 +38,10 @@
                         <td th:text="${canteen.name}"></td>
                         <td th:text="${canteen.location}"></td>
                         <td>
-                            <!-- Action buttons (e.g., edit, delete) can go here -->
                             <button class="btn btn-primary"><a href="#">Edit<a></button>
-                            <button class="btn btn-danger"><a href="#">Delete</a></button>
+                                <button class="btn btn-danger">
+                                    <a th:href="@{/ad/delete(c_id=${canteen.id})}">Delete</a>
+                                </button>
                         </td>
                     </tr>
                 </tbody>
@@ -73,7 +70,6 @@
                         <td th:text="${iterStat.index + 1}"></td>
                         <td th:text="${shop.name}"></td>
                         <td>
-                            <!-- Action buttons (e.g., edit, delete) can go here -->
                             <button class="btn btn-primary"><a href="#">Edit<a></button>
                             <button class="btn btn-danger"><a href="#">Delete</a></button>
                         </td>
@@ -81,58 +77,6 @@
                 </tbody>
             </table>
         </div>
-<!-- 
-        <div class="modal fade" id="createCanteenModal" tabindex="-1" role="dialog" aria-labelledby="createCanteenModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="createCanteenModalLabel">Create Canteen</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="createCanteenForm">
-                            <div class="form-group">
-                                <label for="canteenName">Canteen Name</label>
-                                <input type="text" class="form-control" id="canteenName" required>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onclick="createCanteen()">Create Canteen</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="createShopModal" tabindex="-1" role="dialog" aria-labelledby="createShopModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="createShopModalLabel">Create Shop</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="createShopForm">
-                            <div class="form-group">
-                                <label for="shopName">Shop Name</label>
-                                <input type="text" class="form-control" id="shopName" required>
-                                <input type="hidden" id="selectedCanteenId">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onclick="createShop()">Create Shop</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

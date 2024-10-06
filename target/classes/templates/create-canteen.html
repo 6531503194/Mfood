@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Canteen</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create a New Canteen</h1>
+        <form th:action="@{/ad/create-canteen}" th:object="${canteen}" method="post">
+            <div class="form-group">
+                <label for="name">Canteen Name</label>
+                <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Enter canteen name" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="location" th:field="*{location}" placeholder="Enter canteen location" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Canteen</button>
+        </form>
+    </div>
+</body>
+</html>
