@@ -8,8 +8,11 @@ public class Shop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "s_id")
+    @Column(name = "shop_pk")
     private Integer id;
+
+    @Column(name = "s_id", nullable = false)
+    private Integer s_id;
 
     @ManyToOne
     @JoinColumn(name = "c_id", nullable = false)

@@ -20,4 +20,12 @@ public class ShopService {
         return shops;
     }
 
+    public void deleteById(Integer id) {
+
+        S_repo.deleteById(id);
+    }
+
+
+
+    
 }

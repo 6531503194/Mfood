@@ -1,7 +1,8 @@
 package com.pj.pd.Entity;
 
 import jakarta.persistence.*;
-import java.util.Set;
+import java.util.List;
+
 
 @Entity
 @Table(name = "canteen")
@@ -10,7 +11,7 @@ public class Canteen {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "c_id")
-    private Integer id;
+    private int id;
 
     @Column(name = "c_name", nullable = false)
     private String name;
@@ -18,13 +19,17 @@ public class Canteen {
     @Column(name = "c_location", nullable = false)
     private String location;
 
-    @OneToMany(mappedBy = "canteen", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Shop> shops;
+    // @OneToMany(mappedBy = "canteen", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    // private List<Shop> shops;
+    
+    @OneToMany(mappedBy = "canteen", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Shop> shops;
+
 
 
     public Canteen() {}
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
@@ -48,11 +53,11 @@ public class Canteen {
         this.location = location;
     }
 
-    public Set<Shop> getShops() {
+    public List<Shop> getShops() {
         return shops;
     }
 
-    public void setShops(Set<Shop> shops) {
+    public void setShops(List<Shop> shops) {
         this.shops = shops;
     }
 }

@@ -40,7 +40,7 @@
                         <td>
                             <button class="btn btn-primary"><a href="#">Edit<a></button>
                                 <button class="btn btn-danger">
-                                    <a th:href="@{/ad/delete(c_id=${canteen.id})}">Delete</a>
+                                    <a th:href="@{/ad/deleteCanteen(c_id=${canteen.id})}">Delete</a>
                                 </button>
                         </td>
                     </tr>
@@ -71,8 +71,8 @@
                         <td th:text="${shop.name}"></td>
                         <td>
                             <button class="btn btn-primary"><a href="#">Edit<a></button>
-                            <button class="btn btn-danger"><a href="#">Delete</a></button>
-                        </td>
+                                <a th:href="@{/ad/deleteShop(id=${shop.id})}">Delete</a>
+                            </td>
                     </tr>
                 </tbody>
             </table>
